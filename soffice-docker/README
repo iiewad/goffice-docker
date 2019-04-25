@@ -1,0 +1,10 @@
+soffice
+
+# Build Image
+`docker build . -t iewad/soffice --build-arg  UID=$(id -u) --build-arg GID=$(id -u)`
+
+# Run Container
+`docker run --name soffice#{n} -it -d -v /path:/path iewad/soffice`
+
+# Convert Documents
+`docker exec -it soffice#{n} soffice --headless --convert-to pdf /home/docker/ocr_storage/filename.doc(x)`
